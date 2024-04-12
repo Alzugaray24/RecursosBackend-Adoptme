@@ -12,8 +12,8 @@ import sessionsRouter from "./routes/sessions.router.js";
 import viewsRouter from "./routes/views.routes.js";
 
 const app = express();
-const PORT = process.env.TEST_PORT || 5001;
-const connection = mongoose.connect(process.env.TEST_MONGO_URL);
+const PORT = process.env.PROD_PORT || 80;
+const connection = mongoose.connect(process.env.PRODUCTION_MONGO_URL);
 
 const hbs = exphbs.create({ extname: "hbs" });
 app.engine("hbs", hbs.engine);
